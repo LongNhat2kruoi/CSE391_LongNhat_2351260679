@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành chương 2 (Lê Sỹ Long Nhật)</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    a {
+      color: crimson;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <body>
+    <!-- Form thêm sinh viên -->
+    <h1>Thêm sinh viên</h1>
+    <form action="">
+      <label
+        for="maSV"
+        style="display: inline-block; width: 120px; margin-bottom: 8px"
+        >Mã sinh viên:</label
+      >
+      <input
+        type="text"
+        id="maSV"
+        name="maSV"
+        required
+        style="width: 250px"
+      /><br /><br />
+
+      <label
+        for="hoTen"
+        style="display: inline-block; width: 120px; margin-bottom: 8px"
+        >Họ và Tên:</label
+      >
+      <input
+        type="text"
+        id="hoTen"
+        name="hoTen"
+        required
+        style="width: 250px"
+      /><br /><br />
+
+      <label
+        for="email"
+        style="display: inline-block; width: 120px; margin-bottom: 8px"
+        >Email:</label
+      >
+      <input
+        type="text"
+        id="email"
+        name="email"
+        required
+        style="width: 250px"
+      /><br /><br />
+
+      <label
+        for="ngaysinh"
+        style="display: inline-block; width: 120px; margin-bottom: 8px"
+        >Ngày sinh:</label
+      >
+      <input
+        type="date"
+        id="ngaysinh"
+        name="ngaysinh"
+        required
+        style="width: 250px"
+      /><br /><br />
+
+      <label>Giới tính:</label>
+      <input type="radio" id="nam" name="gioiTinh" value="Nam" />
+      <label for="nam">Nam</label>
+      <input type="radio" id="nu" name="gioiTinh" value="Nữ" />
+      <label for="nu">Nữ</label>
+      <input
+        type="radio"
+        id="chuaxacdinh"
+        name="gioiTinh"
+        value="Chưa xác định"
+      />
+      <label for="chuaxacdinh">Chưa xác định</label>
+      <br /><br />
+
+      <label for="ghiChu">Ghi chú:</label><br />
+      <textarea id="ghiChu" name="ghiChu" rows="4" cols="40"></textarea>
+      <br /><br />
+
+      <button type="submit">Thêm sinh viên</button>
+    </form>
+
+    <!-- Bảng hiện thị danh sách sinh viên -->
+    <h1>Danh sách sinh viên</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Mã SV</th>
+          <th>Họ và Tên</th>
+          <th>Email</th>
+          <th>Giới tính</th>
+          <th>Ngày sinh</th>
+          <th>Tuỳ chọn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- sinh viên 1 -->
+        <tr>
+          <td>1</td>
+          <td>SV001</td>
+          <td>Lê Sỹ Long Nhật</td>
+          <td>lenhat07112005@gmail.com</td>
+          <td>Nam</td>
+          <td>07/11/2005</td>
+          <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+        </tr>
+        <!-- sinh viên 2 -->
+        <tr>
+          <td>2</td>
+          <td>SV002</td>
+          <td>Vũ Trí Trường</td>
+          <td>truongvu0608@gmail.com</td>
+          <td>Nam</td>
+          <td>08/06/2005</td>
+          <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+        </tr>
+        <!-- sinh viên 3 -->
+        <tr>
+          <td>3</td>
+          <td>SV003</td>
+          <td>Phạm Văn Giang</td>
+          <td>pvgiang@gmail.com</td>
+          <td>Nam</td>
+          <td>15/07/2004</td>
+          <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
