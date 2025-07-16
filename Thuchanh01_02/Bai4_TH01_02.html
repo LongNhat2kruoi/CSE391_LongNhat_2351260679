@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    form {
+      width: 600px;
+      margin: auto;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="datetime-local"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+    }
+    textarea {
+      height: 100px;
+      resize: none;
+    }
+    select {
+      height: 28px;
+      width: 200px;
+      font-size: 14px;
+      padding: 4px 8px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+    .form-section {
+      width: 600px;
+      margin: auto;
+      font-family: Arial, sans-serif;
+    }
+    label {
+      display: block;
+      margin: 8px 0 4px;
+    }
+    .captcha-box {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      font-family: "Courier New", monospace;
+      font-size: 28px;
+      letter-spacing: 5px;
+    }
+    .captcha-text {
+      font-weight: bold;
+      color: #333;
+    }
+    .captcha-change {
+      margin-left: auto;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .all-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .nav-buttons {
+      display: flex;
+    }
+
+    .buttons {
+      display: flex;
+    }
+
+    .buttons button {
+      margin-left: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+
+    .icon {
+      margin-right: 5px;
+    }
+    .checkbox-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 5px 0;
+    }
+
+    .checkbox-label {
+      display: flex;
+      justify-content: space-between;
+      width: 200px;
+    }
+    .icon-button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px;
+      margin-right: 0.5px;
+      color: black;
+    }
+
+    .icon-button:focus {
+      outline: none;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #ccc;
+      margin: 20px 0;
+    }
+  </style>
+  <body>
+    <form>
+      <div class="section">
+        <h2>Basic Info</h2>
+        <hr />
+        <label>Employee ID <input type="text" readonly /></label>
+        <label>Last Name <input type="text" /></label>
+        <label>First Name <input type="text" /></label>
+
+        <label>Gender</label>
+        <label><input type="radio" name="gender" /> Male</label>
+        <label><input type="radio" name="gender" /> Female</label>
+        <label><input type="radio" name="gender" /> XXX</label>
+        <label><input type="radio" name="gender" /> ZZZ</label>
+
+        <label>Title <input type="text" /></label>
+        <label>Suffix <input type="text" /></label>
+        <label>BirthDate <input type="datetime-local" /></label>
+        <label>HireDate <input type="datetime-local" /></label>
+        <label>SSN # (if applicable) <input type="text" /></label>
+        <label
+          >Report To
+          <select>
+            <option>Buchanan</option>
+            <option>Nghệ An</option>
+            <option>Hà Nội</option>
+            <option>TP Hồ Chí Minh</option>
+            <option>Đà Nẵng</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="section">
+        <h2>Contact Info</h2>
+        <hr />
+        <label>Email</label>
+        <input type="email" name="email" placeholder="name@example.com" />
+        <label>Address <input type="text" /></label>
+        <label>City <input type="text" /></label>
+        <label>Region <input type="text" /></label>
+        <label>Postal Code <input type="text" /></label>
+        <label
+          >Country
+          <select>
+            <option>Russian Federation</option>
+            <option>Việt Nam</option>
+            <option>Lào</option>
+            <option>Campuchia</option>
+          </select>
+        </label>
+        <label>US Home Phone <input type="text" /></label>
+        <label>Photo <input type="text" /></label>
+      </div>
+
+      <div class="section">
+        <h2>Optional Info</h2>
+        <hr />
+        <label
+          >Notes
+          <textarea></textarea>
+        </label>
+        <label>Preferred Shift</label>
+        <div class="checkbox-wrapper">
+          <label class="checkbox-label">
+            Regular
+            <input type="checkbox" name="shift" value="regular" />
+          </label>
+        </div>
+
+        <div class="checkbox-wrapper">
+          <label class="checkbox-label">
+            Gravy Yard
+            <input type="checkbox" name="shift" value="gravy" />
+          </label>
+        </div>
+
+        <label
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 150px;
+          "
+        >
+          Active?
+          <input type="checkbox" name="active" />
+        </label>
+
+        <label>Are you human?</label>
+        <div class="captcha-box">
+          <span class="captcha-text">TIDAWO</span>
+          <span class="captcha-change">Click to change</span>
+        </div>
+        <input
+          type="text"
+          name="captcha"
+          style="width: 100%; margin-top: 6px; padding: 6px"
+        />
+        <hr />
+        <div class="all-buttons">
+          <div class="nav-buttons">
+            <button type="button" class="icon-button">⏪</button>
+            <button type="button" class="icon-button">⏩</button>
+          </div>
+
+          <div class="buttons">
+            <button type="submit"><span class="icon">💾</span>Submit</button>
+            <button type="reset"><span class="icon">❌</span>Cancel</button>
+          </div>
+        </div>
+
+        <p style="font-size: 12px">* required</p>
+      </div>
+    </form>
+  </body>
+</html>
