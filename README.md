@@ -1,10 +1,9 @@
 # CSE391_LongNhat_2351260679
-# 📚 BÀI TẬP MÔN Nền tảng Web
+# 📚 BÀI TẬP MÔN NỀN TẢNG WEB
 
 ## 👤 Thông Tin Sinh Viên
 
 | Họ và Tên   | Lê Sỹ Long Nhật |
-|-------------|-----------------------|
 | Ngày Sinh   | 07/11/2005          |
 | Mã Sinh Viên| 2351260679         |
 | Lớp         | 65TTNT    |
