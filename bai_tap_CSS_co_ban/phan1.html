@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài thực hành chương 2 (Lê Sỹ Long Nhật)</title>
+  </head>
+  <link rel="stylesheet" href="phan1.css" />
+  <body>
+    <!-- Form thêm sinh viên -->
+    <div class="title">
+      <h1>Thêm sinh viên</h1>
+    </div>
+
+    <form action="">
+      <label for="maSV">Mã sinh viên:</label>
+      <input type="text" id="maSV" name="maSV" required /><br /><br />
+
+      <label for="hoTen">Họ và Tên:</label>
+      <input type="text" id="hoTen" name="hoTen" required /><br /><br />
+
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required /><br /><br />
+
+      <label for="ngaysinh">Ngày sinh:</label>
+      <input type="date" id="ngaysinh" name="ngaysinh" required /><br /><br />
+
+      <label>Giới tính:</label>
+      <input type="radio" id="nam" name="gioiTinh" value="Nam" />
+      <label for="nam">Nam</label>
+      <input type="radio" id="nu" name="gioiTinh" value="Nữ" />
+      <label for="nu">Nữ</label>
+      <input
+        type="radio"
+        id="chuaxacdinh"
+        name="gioiTinh"
+        value="Chưa xác định"
+      />
+      <label for="chuaxacdinh">Chưa xác định</label>
+      <br /><br />
+
+      <label for="ghiChu">Ghi chú:</label><br />
+      <textarea id="ghiChu" name="ghiChu" rows="4" cols="49"></textarea>
+      <br /><br />
+
+      <button type="submit">Thêm sinh viên</button>
+    </form>
+
+    <!-- Bảng hiện thị danh sách sinh viên -->
+     <div class="title">
+      <h1>Danh sách sinh viên</h1>
+     </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>STT</th>
+          <th>Mã SV</th>
+          <th>Họ và Tên</th>
+          <th>Email</th>
+          <th>Giới tính</th>
+          <th>Ngày sinh</th>
+          <th>Tuỳ chọn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- sinh viên 1 -->
+        <tr>
+          <td>1</td>
+          <td>SV001</td>
+          <td>Lê Sỹ Long Nhật</td>
+          <td>lenhat07112005@gmail.com</td>
+          <td>Nam</td>
+          <td>07/11/2005</td>
+          <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+        </tr>
+        <!-- sinh viên 2 -->
+        <tr>
+          <td>2</td>
+          <td>SV002</td>
+          <td>Vũ Trí Trường</td>
+          <td>truongvu0608@gmail.com</td>
+          <td>Nam</td>
+          <td>08/06/2005</td>
+          <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+        </tr>
+        <!-- sinh viên 3 -->
+        <tr>
+          <td>3</td>
+          <td>SV003</td>
+          <td>Phạm Văn Giang</td>
+          <td>pvgiang@gmail.com</td>
+          <td>Nam</td>
+          <td>15/07/2004</td>
+          <td><a href="#">Sửa</a> | <a href="#">Xoá</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
