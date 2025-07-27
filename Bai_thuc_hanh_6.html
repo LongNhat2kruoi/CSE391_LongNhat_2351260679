@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý sinh viên</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .navbar {
+        background-color: #435d7d;
+      }
+      .navbar-brand {
+        color: #fff;
+        font-weight: bold;
+      }
+      .btn:hover {
+        background-color: #333;
+        color: #fff;
+      }
+      table tbody tr:hover {
+        background-color: #e2e6ea;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">Quản lý sinh viên</a>
+      </div>
+    </nav>
+    <div class="container my-4">
+      <div class="row g-4">
+        <!-- Form thêm/sửa sinh viên -->
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header bg-primary text-white">Thêm sinh viên</div>
+            <div class="card-body">
+              <form id="formSinhVien">
+                <input type="hidden" id="editIndex" value="-1" />
+                <div class="mb-3">
+                  <label for="maSV" class="form-label">Mã sinh viên:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="maSV"
+                    name="maSV"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="hoTen" class="form-label">Họ và Tên:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="hoTen"
+                    name="hoTen"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email:</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="ngaysinh" class="form-label">Ngày sinh:</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="ngaysinh"
+                    name="ngaysinh"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Giới tính:</label><br />
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gioiTinh"
+                      id="nam"
+                      value="Nam"
+                      required
+                    />
+                    <label class="form-check-label" for="nam">Nam</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gioiTinh"
+                      id="nu"
+                      value="Nữ"
+                    />
+                    <label class="form-check-label" for="nu">Nữ</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="gioiTinh"
+                      id="khac"
+                      value="Khác"
+                    />
+                    <label class="form-check-label" for="khac">Khác</label>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="ghiChu" class="form-label">Ghi chú:</label>
+                  <textarea
+                    class="form-control"
+                    id="ghiChu"
+                    name="ghiChu"
+                    rows="3"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">
+                  Thêm sinh viên
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Bảng ds sinh viên -->
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-header bg-success text-white">
+              Danh sách sinh viên
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-bordered table-hover" id="tableSV">
+                <thead class="table-dark">
+                  <tr>
+                    <th>STT</th>
+                    <th>Mã SV</th>
+                    <th>Họ và Tên</th>
+                    <th>Email</th>
+                    <th>Giới tính</th>
+                    <th>Ngày sinh</th>
+                    <th>Tuỳ chọn</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>SV001</td>
+                    <td>Lê Sỹ Long Nhật</td>
+                    <td>lenhat@gmail.com</td>
+                    <td>Nam</td>
+                    <td>2005-11-07</td>
+                    <td>
+                      <button class="btn btn-warning btn-sm btn-edit">Sửa</button>
+                      <button class="btn btn-danger btn-sm btn-delete">Xoá</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>SV002</td>
+                    <td>Vũ Trí Trường</td>
+                    <td>truongvu@gmail.com</td>
+                    <td>Nam</td>
+                    <td>2005-06-08</td>
+                    <td>
+                      <button class="btn btn-warning btn-sm btn-edit">Sửa</button>
+                      <button class="btn btn-danger btn-sm btn-delete">Xoá</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>SV003</td>
+                    <td>Phạm Văn Giang</td>
+                    <td>pvgiang@gmail.com</td>
+                    <td>Nam</td>
+                    <td>2005-07-15</td>
+                    <td>
+                      <button class="btn btn-warning btn-sm btn-edit">Sửa</button>
+                      <button class="btn btn-danger btn-sm btn-delete">Xoá</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const form = document.getElementById("formSinhVien");
+      const table = document.getElementById("tableSV").getElementsByTagName("tbody")[0];
+      let editIndex = -1;
+
+      // Lắng nghe sự kiện submit form
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const maSV = document.getElementById("maSV").value.trim();
+        const hoTen = document.getElementById("hoTen").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const ngaysinh = document.getElementById("ngaysinh").value;
+        const gioiTinh = document.querySelector('input[name="gioiTinh"]:checked')?.value || "";
+
+        if (!maSV || !hoTen || !email || !ngaysinh || !gioiTinh) {
+          alert("Vui lòng nhập đầy đủ thông tin!");
+          return;
+        }
+
+        if (editIndex === -1) {
+          // Thêm sinh viên mới
+          const newRow = table.insertRow();
+          newRow.innerHTML = `
+            <td></td>
+            <td>${maSV}</td>
+            <td>${hoTen}</td>
+            <td>${email}</td>
+            <td>${gioiTinh}</td>
+            <td>${ngaysinh}</td>
+            <td>
+              <button class="btn btn-warning btn-sm btn-edit">Sửa</button>
+              <button class="btn btn-danger btn-sm btn-delete">Xoá</button>
+            </td>`;
+        } else {
+          // Cập nhật sinh viên
+          const row = table.rows[editIndex];
+          row.cells[1].innerText = maSV;
+          row.cells[2].innerText = hoTen;
+          row.cells[3].innerText = email;
+          row.cells[4].innerText = gioiTinh;
+          row.cells[5].innerText = ngaysinh;
+          editIndex = -1;
+          form.querySelector("button[type='submit']").innerText = "Thêm sinh viên";
+        }
+
+        form.reset();
+        capNhatSTT();
+        ganSuKien();
+      });
+
+      // Hàm cập nhật STT
+      function capNhatSTT() {
+        for (let i = 0; i < table.rows.length; i++) {
+          table.rows[i].cells[0].innerText = i + 1;
+        }
+      }
+
+      // Hàm gán sự kiện Sửa và Xoá
+      function ganSuKien() {
+        const btnDeletes = table.querySelectorAll(".btn-delete");
+        const btnEdits = table.querySelectorAll(".btn-edit");
+
+        btnDeletes.forEach((btn, index) => {
+          btn.onclick = function () {
+            if (confirm("Bạn có chắc chắn muốn xoá sinh viên này?")) {
+              table.deleteRow(index);
+              capNhatSTT();
+              ganSuKien();
+            }
+          };
+        });
+
+        btnEdits.forEach((btn, index) => {
+          btn.onclick = function () {
+            const row = table.rows[index];
+            document.getElementById("maSV").value = row.cells[1].innerText;
+            document.getElementById("hoTen").value = row.cells[2].innerText;
+            document.getElementById("email").value = row.cells[3].innerText;
+            document.getElementById("ngaysinh").value = row.cells[5].innerText;
+
+            const gioiTinh = row.cells[4].innerText;
+            document.querySelectorAll('input[name="gioiTinh"]').forEach(radio => {
+              radio.checked = (radio.value === gioiTinh);
+            });
+
+            editIndex = index;
+            form.querySelector("button[type='submit']").innerText = "Cập nhật sinh viên";
+          };
+        });
+      }
+
+      // Khởi tạo
+      capNhatSTT();
+      ganSuKien();
+    </script>
+  </body>
+</html>
